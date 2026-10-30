@@ -1,0 +1,11 @@
+import { useEffect, useState } from 'react';
+import { ArrowUpRight, CircleDollarSign, ClipboardList, ShoppingBasket, Sparkles } from 'lucide-react';
+import StatCard from '../components/StatCard';
+import { request } from '../services/api';
+
+export default function CanteenDashboard({ businessId, setPage }) {
+  const [sales, setSales] = useState(null);
+  const [error, setError] = useState('');
+  useEffect(() => { request(`/businesses/${businessId}/analytics/sales`).then(setSales).catch(err => setError(err.message)); }, [businessId]);
+  return <><div className="welcome-row"><div><p className="eyebrow">YOUR BUSINESS AT A GLANCE</p><h1>Good morning <span>✳</span></h1><p className="muted">Here’s what’s happening with your canteen today.</p></div><button className="primary-button" onClick={() => setPage('billing')}>+ New order</button></div>{error && <div className="notice">{error}. Add a business and create an account to see live data.</div>}<div className="stats-grid"><StatCard label="TOTAL SALES" value={sales ? `₹${sales.sales_total.toLocaleString('en-IN')}` : '—'} note="From saved orders" icon={CircleDollarSign} /><StatCard label="ORDERS" value={sales?.order_count ?? '—'} note="Completed orders" icon={ClipboardList} /><StatCard label="ITEMS SOLD" value={sales?.items_sold.reduce((total, [, quantity]) => total + quantity, 0) ?? '—'} note="Across all menu items" icon={ShoppingBasket} /></div><section className="content-card"><div className="section-heading"><div><p className="eyebrow">QUICK ACTIONS</p><h2>Keep things moving</h2></div></div><div className="action-grid"><button onClick={() => setPage('billing')}><span className="action-icon peach"><ClipboardList /></span><span><b>Create an order</b><small>Start a quick checkout</small></span><ArrowUpRight size={17} /></button><button onClick={() => setPage('menu')}><span className="action-icon green"><ShoppingBasket /></span><span><b>Update your menu</b><small>Add or edit food items</small></span><ArrowUpRight size={17} /></button><button onClick={() => setPage('feedback')}><span className="action-icon violet"><Sparkles /></span><span><b>Review feedback</b><small>See what customers think</small></span><ArrowUpRight size={17} /></button></div></section></>;
+}

@@ -1,0 +1,11 @@
+import { useEffect, useState } from 'react';
+import { Boxes, Plus } from 'lucide-react';
+import { request } from '../services/api';
+
+export default function Inventory({ businessId }) {
+  const [items, setItems] = useState([]); const [name, setName] = useState(''); const [quantity, setQuantity] = useState(''); const [unit, setUnit] = useState('units'); const [message, setMessage] = useState('');
+  async function refresh() { try { setItems(await request(`/businesses/${businessId}/inventory`)); } catch (error) { setMessage(error.message); } }
+  useEffect(() => { refresh(); }, [businessId]);
+  async function save(event) { event.preventDefault(); setMessage(''); try { await request(`/businesses/${businessId}/inventory`, { method: 'PUT', body: JSON.stringify({ name, quantity: Number(quantity), unit, low_stock_at: 5 }) }); setName(''); setQuantity(''); await refresh(); } catch (error) { setMessage(error.message); } }
+  return <><div className="page-title"><p className="eyebrow">STOCK CONTROL</p><h1>Inventory</h1><p className="muted">Keep a simple record of ingredients and supplies.</p></div><div className="two-column"><section className="content-card"><div className="section-heading"><h2><Boxes size={19} /> Stock on hand</h2><span className="pill">{items.length} tracked</span></div>{items.map(item => <div className="list-row" key={item.id}><div className="grow"><b>{item.name}</b><small>{item.quantity <= item.low_stock_at ? 'Low stock' : 'In stock'}</small></div><strong>{item.quantity} {item.unit}</strong></div>)}{!items.length && <p className="empty-state">Track your first ingredient using the form.</p>}</section><form className="content-card add-form" onSubmit={save}><p className="eyebrow">STOCK UPDATE</p><h2>Add or update stock</h2><label>Ingredient or supply<input required value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Basmati rice" /></label><label>Current quantity<input required type="number" min="0" step="0.1" value={quantity} onChange={e => setQuantity(e.target.value)} placeholder="25" /></label><label>Unit<input required value={unit} onChange={e => setUnit(e.target.value)} placeholder="kg, litres, packs…" /></label>{message && <p className="form-message">{message}</p>}<button className="primary-button"><Plus size={17} /> Save stock</button></form></div>;
+}
