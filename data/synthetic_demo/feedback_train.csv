@@ -1,0 +1,121 @@
+comment,label,source,is_synthetic,split
+Today's lunch was well cooked overall during the break.,positive,synthetic_demo,true,train
+The meal needs less pepper overall on campus.,spice,synthetic_demo,true,train
+The dish was overcooked today during the break.,quality,synthetic_demo,true,train
+My food had a nice flavour at lunch with lunch.,positive,synthetic_demo,true,train
+Today's lunch had too much chilli today with the usual portion.,spice,synthetic_demo,true,train
+Today's lunch was overcooked for me with lunch.,quality,synthetic_demo,true,train
+This plate was filling this time during the break.,positive,synthetic_demo,true,train
+The meal was too spicy this time during the break.,spice,synthetic_demo,true,train
+My food smelled unpleasant at lunch on campus.,quality,synthetic_demo,true,train
+The dish was delicious this time on campus.,positive,synthetic_demo,true,train
+Today's lunch burned my mouth at lunch with the usual portion.,spice,synthetic_demo,true,train
+The meal smelled unpleasant at lunch with lunch.,quality,synthetic_demo,true,train
+My food had a nice flavour overall from the lunch counter.,positive,synthetic_demo,true,train
+Today's lunch was too mild overall with lunch.,spice,synthetic_demo,true,train
+The meal was cold this time from the lunch counter.,quality,synthetic_demo,true,train
+My food tasted fresh this time as served.,positive,synthetic_demo,true,train
+The meal burned my mouth at lunch from the lunch counter.,spice,synthetic_demo,true,train
+The meal was cold this time with lunch.,quality,synthetic_demo,true,train
+The dish was enjoyable today with lunch.,positive,synthetic_demo,true,train
+The meal was too mild at lunch as served.,spice,synthetic_demo,true,train
+The dish was dry at lunch during the break.,quality,synthetic_demo,true,train
+The dish tasted fresh overall during the break.,positive,synthetic_demo,true,train
+The dish burned my mouth at lunch on campus.,spice,synthetic_demo,true,train
+The meal was dry for me during the break.,quality,synthetic_demo,true,train
+Today's lunch was enjoyable today with the usual portion.,positive,synthetic_demo,true,train
+This plate was too mild for me as served.,spice,synthetic_demo,true,train
+Today's lunch smelled unpleasant for me with the usual portion.,quality,synthetic_demo,true,train
+My food tasted fresh for me with lunch.,positive,synthetic_demo,true,train
+My food was hotter than expected today during the break.,spice,synthetic_demo,true,train
+Today's lunch was overcooked at lunch as served.,quality,synthetic_demo,true,train
+Today's lunch was well cooked today from the lunch counter.,positive,synthetic_demo,true,train
+The dish was too spicy for me as served.,spice,synthetic_demo,true,train
+Today's lunch was dry for me during the break.,quality,synthetic_demo,true,train
+My food was delicious for me with lunch.,positive,synthetic_demo,true,train
+The dish was hotter than expected today from the lunch counter.,spice,synthetic_demo,true,train
+The dish did not taste fresh today on campus.,quality,synthetic_demo,true,train
+The dish had a nice flavour at lunch as served.,positive,synthetic_demo,true,train
+The dish had too much chilli at lunch during the break.,spice,synthetic_demo,true,train
+The meal did not taste fresh today as served.,quality,synthetic_demo,true,train
+The meal tasted fresh overall during the break.,positive,synthetic_demo,true,train
+Today's lunch was hotter than expected today from the lunch counter.,spice,synthetic_demo,true,train
+The meal did not taste fresh today with the usual portion.,quality,synthetic_demo,true,train
+Today's lunch was enjoyable at lunch as served.,positive,synthetic_demo,true,train
+Today's lunch burned my mouth this time as served.,spice,synthetic_demo,true,train
+The dish had poor texture at lunch on campus.,quality,synthetic_demo,true,train
+This plate was well cooked at lunch with lunch.,positive,synthetic_demo,true,train
+The dish burned my mouth today with the usual portion.,spice,synthetic_demo,true,train
+The meal had poor texture at lunch with lunch.,quality,synthetic_demo,true,train
+Today's lunch was delicious today with lunch.,positive,synthetic_demo,true,train
+This plate was too mild today during the break.,spice,synthetic_demo,true,train
+This plate was overcooked at lunch during the break.,quality,synthetic_demo,true,train
+The meal was delicious this time on campus.,positive,synthetic_demo,true,train
+My food needs less pepper overall during the break.,spice,synthetic_demo,true,train
+This plate was overcooked at lunch from the lunch counter.,quality,synthetic_demo,true,train
+My food was enjoyable overall on campus.,positive,synthetic_demo,true,train
+Today's lunch was hotter than expected this time with lunch.,spice,synthetic_demo,true,train
+My food had poor texture for me with the usual portion.,quality,synthetic_demo,true,train
+Today's lunch tasted fresh today from the lunch counter.,positive,synthetic_demo,true,train
+The dish was too spicy today with the usual portion.,spice,synthetic_demo,true,train
+The dish was cold today on campus.,quality,synthetic_demo,true,train
+The dish was enjoyable this time with lunch.,positive,synthetic_demo,true,train
+The meal was hotter than expected at lunch during the break.,spice,synthetic_demo,true,train
+This plate was overcooked overall as served.,quality,synthetic_demo,true,train
+Today's lunch was filling this time as served.,positive,synthetic_demo,true,train
+The dish was too mild today with lunch.,spice,synthetic_demo,true,train
+This plate was overcooked today from the lunch counter.,quality,synthetic_demo,true,train
+This plate was enjoyable today from the lunch counter.,positive,synthetic_demo,true,train
+The meal was too mild at lunch during the break.,spice,synthetic_demo,true,train
+The meal was dry today as served.,quality,synthetic_demo,true,train
+This plate was enjoyable at lunch on campus.,positive,synthetic_demo,true,train
+My food needs less pepper this time during the break.,spice,synthetic_demo,true,train
+The meal was dry today on campus.,quality,synthetic_demo,true,train
+Today's lunch was filling at lunch with lunch.,positive,synthetic_demo,true,train
+The dish was too spicy for me with lunch.,spice,synthetic_demo,true,train
+The meal smelled unpleasant today with the usual portion.,quality,synthetic_demo,true,train
+The meal was filling this time with the usual portion.,positive,synthetic_demo,true,train
+My food was hotter than expected at lunch with the usual portion.,spice,synthetic_demo,true,train
+Today's lunch did not taste fresh at lunch on campus.,quality,synthetic_demo,true,train
+The dish had a nice flavour at lunch on campus.,positive,synthetic_demo,true,train
+Today's lunch burned my mouth at lunch on campus.,spice,synthetic_demo,true,train
+My food smelled unpleasant today during the break.,quality,synthetic_demo,true,train
+My food was filling this time with the usual portion.,positive,synthetic_demo,true,train
+Today's lunch had too much chilli at lunch from the lunch counter.,spice,synthetic_demo,true,train
+The meal smelled unpleasant at lunch during the break.,quality,synthetic_demo,true,train
+The meal had a nice flavour for me during the break.,positive,synthetic_demo,true,train
+Today's lunch needs less pepper overall during the break.,spice,synthetic_demo,true,train
+The meal smelled unpleasant overall with the usual portion.,quality,synthetic_demo,true,train
+This plate was filling today on campus.,positive,synthetic_demo,true,train
+My food had too much chilli at lunch from the lunch counter.,spice,synthetic_demo,true,train
+This plate was dry at lunch with the usual portion.,quality,synthetic_demo,true,train
+The dish tasted fresh for me on campus.,positive,synthetic_demo,true,train
+This plate had too much chilli this time during the break.,spice,synthetic_demo,true,train
+The meal had poor texture this time with the usual portion.,quality,synthetic_demo,true,train
+Today's lunch had a nice flavour overall from the lunch counter.,positive,synthetic_demo,true,train
+The meal was too spicy today on campus.,spice,synthetic_demo,true,train
+The dish was cold at lunch as served.,quality,synthetic_demo,true,train
+Today's lunch was enjoyable overall on campus.,positive,synthetic_demo,true,train
+Today's lunch was too mild today as served.,spice,synthetic_demo,true,train
+The meal was cold overall during the break.,quality,synthetic_demo,true,train
+This plate tasted fresh at lunch on campus.,positive,synthetic_demo,true,train
+This plate burned my mouth this time on campus.,spice,synthetic_demo,true,train
+The dish did not taste fresh at lunch on campus.,quality,synthetic_demo,true,train
+The dish was delicious overall during the break.,positive,synthetic_demo,true,train
+Today's lunch was too mild today with lunch.,spice,synthetic_demo,true,train
+Today's lunch was overcooked this time with the usual portion.,quality,synthetic_demo,true,train
+This plate was enjoyable overall on campus.,positive,synthetic_demo,true,train
+Today's lunch needs less pepper for me from the lunch counter.,spice,synthetic_demo,true,train
+This plate smelled unpleasant for me with the usual portion.,quality,synthetic_demo,true,train
+This plate was filling for me with lunch.,positive,synthetic_demo,true,train
+The meal needs less pepper this time with the usual portion.,spice,synthetic_demo,true,train
+The dish was overcooked at lunch with the usual portion.,quality,synthetic_demo,true,train
+Today's lunch was enjoyable for me from the lunch counter.,positive,synthetic_demo,true,train
+My food was too mild this time with lunch.,spice,synthetic_demo,true,train
+My food was overcooked today with the usual portion.,quality,synthetic_demo,true,train
+The meal was delicious today with lunch.,positive,synthetic_demo,true,train
+Today's lunch was too mild this time on campus.,spice,synthetic_demo,true,train
+Today's lunch smelled unpleasant for me from the lunch counter.,quality,synthetic_demo,true,train
+My food was delicious today with the usual portion.,positive,synthetic_demo,true,train
+The meal was too mild overall as served.,spice,synthetic_demo,true,train
+The dish did not taste fresh this time during the break.,quality,synthetic_demo,true,train

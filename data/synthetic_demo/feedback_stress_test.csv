@@ -1,0 +1,40 @@
+comment,label,language,stress_type,source,is_synthetic
+"Absolutely lovely lunch",positive,English,short,independent_stress_test,true
+"Really enjoyed the dal today",positive,English,natural_variation,independent_stress_test,true
+"Fresh, tasty and nicely cooked",positive,English,multi_feature,independent_stress_test,true
+"Best meal I've had this week",positive,English,informal,independent_stress_test,true
+"The portion was good and the curry tasted great",positive,English,multi_feature,independent_stress_test,true
+"Surprisingly delicious even after a long day",positive,English,natural_variation,independent_stress_test,true
+"Khana mast tha",positive,Hinglish,short,independent_stress_test,true
+"Dal bahut tasty thi",positive,Hinglish,informal,independent_stress_test,true
+"Lunch achha laga",positive,Hinglish,short,independent_stress_test,true
+"Taste ekdum badiya tha",positive,Hinglish,informal,independent_stress_test,true
+"Nice taste yaar",positive,Hinglish,short,independent_stress_test,true
+"The food was good but roti was a little cold",quality,English,ambiguous_mixed_feedback,independent_stress_test,true
+"Vegs were a bit uncooked yesturday",quality,English,misspelling,independent_stress_test,true
+"Too hot for me",spice,English,short,independent_stress_test,true
+"Wayyy too spicy, pls fix",spice,English,misspelling_informal,independent_stress_test,true
+"There was way too much chilli in this",spice,English,natural_variation,independent_stress_test,true
+"Could barely finish it because it burned",spice,English,natural_variation,independent_stress_test,true
+"Please make the gravy less fiery next time",spice,English,indirect_request,independent_stress_test,true
+"Heat level was not manageable",spice,English,natural_variation,independent_stress_test,true
+"The spice was okay but the rice was stale",quality,English,ambiguous_mixed_feedback,independent_stress_test,true
+"Mirchi bahut zyada thi",spice,Hinglish,short,independent_stress_test,true
+"Bahut teekha yaar",spice,Hinglish,short,independent_stress_test,true
+"Thoda kam masala dalna pls",spice,Hinglish,informal_abbreviation,independent_stress_test,true
+"Itna spicy tha ki pani peena pada",spice,Hinglish,mixed_language,independent_stress_test,true
+"Mirchi ne pura taste kharab kar diya",spice,Hinglish,mixed_language,independent_stress_test,true
+"Khana thanda aur bilkul bekar tha",quality,Hinglish,mixed_language,independent_stress_test,true
+"Lunch was lukewarm and kinda soggy",quality,English,informal,independent_stress_test,true
+"The rice smelled odd and felt old",quality,English,natural_variation,independent_stress_test,true
+"Chicken was undercooked in the middle",quality,English,food_safety_wording,independent_stress_test,true
+"The curry tasted stale",quality,English,short,independent_stress_test,true
+"Not fresh at all tbh",quality,English,informal_abbreviation,independent_stress_test,true
+"Taste theek tha but food thanda mila",quality,Hinglish,ambiguous_mixed_feedback,independent_stress_test,true
+"Roti rubber jaisi thi",quality,Hinglish,short_mixed_language,independent_stress_test,true
+"Sabzi basi lag rahi thi",quality,Hinglish,short_mixed_language,independent_stress_test,true
+"Khana thanda tha",quality,Hinglish,short_mixed_language,independent_stress_test,true
+"Fresh toh tha but masala kaafi strong tha",spice,Hinglish,ambiguous_mixed_feedback,independent_stress_test,true
+"Khana mast tha but roti thori thandi thi",quality,Hinglish,ambiguous_mixed_feedback,independent_stress_test,true
+"Okayish",positive,English,ambiguous_short,independent_stress_test,true
+"Nice flavour",positive,English,ambiguous_short,independent_stress_test,true

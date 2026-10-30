@@ -1,0 +1,21 @@
+{
+  "source": "synthetic_demo",
+  "is_synthetic": true,
+  "seed": 20261030,
+  "warning": "Generated data is for software demonstrations only; it is not real sales or customer feedback.",
+  "feedback_records": 150,
+  "feedback_train": 120,
+  "feedback_eval": 30,
+  "feedback_classes": {
+    "positive": 50,
+    "spice": 50,
+    "quality": 50
+  },
+  "sales_rows": 270,
+  "sales_days": 90,
+  "sales_items": 3,
+  "sales_train_days": 72,
+  "sales_eval_days": 18,
+  "sales_date_start": "2026-08-02",
+  "sales_date_end": "2026-10-30"
+}

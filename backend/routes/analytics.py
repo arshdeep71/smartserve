@@ -1,5 +1,5 @@
 from collections import Counter, defaultdict
-from datetime import date, datetime, timedelta
+from datetime import date
 from functools import lru_cache
 
 from bson import ObjectId
@@ -8,11 +8,16 @@ from fastapi import Depends
 
 from backend.database import database
 from backend.services.security import require_roles
+from backend.services.demand import existing_forecast, forecast_history, generate_forecast
 from ml.evaluate_models import evaluate as evaluate_feedback_model
 from ml.forecast_demand import forecast_daily_demand
 from ml.train_feedback_model import load_training_data, train_model
 
 router = APIRouter(prefix="/api/businesses/{business_id}/analytics", tags=["analytics"])
+
+# Low-confidence predictions are surfaced for human review instead of being
+# counted or presented as an assigned feedback category.
+FEEDBACK_CONFIDENCE_THRESHOLD = 0.60
 
 
 def check_business(business_id):
@@ -64,12 +69,17 @@ def feedback_insights(business_id: str, user=Depends(require_roles("admin", "man
         probabilities = model.predict_proba(texts)
         for index, label, scores in zip(comment_indexes, labels, probabilities):
             row = rows[index]
-            predicted_counts[str(label)] += 1
+            confidence = float(max(scores))
+            review_required = confidence < FEEDBACK_CONFIDENCE_THRESHOLD
+            if not review_required:
+                predicted_counts[str(label)] += 1
             predictions.append({
                 "meal": row.get("meal", ""),
                 "comment": comments[index],
-                "predicted_label": str(label),
-                "confidence": round(float(max(scores)), 3),
+                "predicted_label": None if review_required else str(label),
+                "confidence": round(confidence, 3),
+                "review_required": review_required,
+                "review_reason": "Low model confidence; manual review required." if review_required else None,
                 "submitted_at": row["submitted_at"].isoformat() if row.get("submitted_at") else None,
             })
 
@@ -85,62 +95,36 @@ def feedback_insights(business_id: str, user=Depends(require_roles("admin", "man
             },
         },
         "feedback_count": len(rows),
-        "classified_count": len(predictions),
+        "classified_count": sum(not row["review_required"] for row in predictions),
+        "review_required_count": sum(row["review_required"] for row in predictions),
+        "confidence_threshold": FEEDBACK_CONFIDENCE_THRESHOLD,
         "predicted_counts": sorted(predicted_counts.items(), key=lambda item: (-item[1], item[0])),
         "predictions": predictions,
-        "warning": "Preliminary model trained on a small demonstration dataset; review predictions before acting on them.",
+        "warning": "Experimental model trained on a small demonstration dataset. Low-confidence comments are left uncategorized for manual review; confidence is not a calibrated probability or a real-world accuracy guarantee.",
     }
 
 
 @router.get("/demand-forecast")
 def demand_forecast(business_id: str, user=Depends(require_roles("admin", "manager"))):
     check_business(business_id)
-    rows = list(database.orders.find({"business_id": business_id, "status": "completed"}))
-    quantities_by_day = defaultdict(lambda: defaultdict(int))
-    for order in rows:
-        created_at = order.get("created_at")
-        if isinstance(created_at, str):
-            try:
-                created_at = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
-            except ValueError:
-                continue
-        if not isinstance(created_at, (datetime, date)):
-            continue
-        order_day = created_at.date() if isinstance(created_at, datetime) else created_at
-        for item in order.get("items", []):
-            name = item.get("name")
-            quantity = item.get("quantity", 0)
-            if name and isinstance(quantity, (int, float)) and quantity > 0:
-                quantities_by_day[order_day][name] += quantity
+    from backend.services.demand import load_daily_sales
+    daily = load_daily_sales(business_id)
+    if daily.empty:
+        return {"status": "insufficient_data", "message": "No completed sales yet.", "items": []}
+    forecast_date = (max(daily.date) + __import__("datetime").timedelta(days=1)).isoformat()
+    saved = existing_forecast(business_id, date.fromisoformat(forecast_date))
+    if not saved:
+        return {"status": "not_generated", "forecast_date": forecast_date, "message": "Forecast has not been generated yet. Use Generate Forecast or wait for the scheduled run.", "items": []}
+    return {"status": "ready", "forecast_date": forecast_date, "generated_at": saved[0].get("generated_at").isoformat() if saved[0].get("generated_at") else None, "items": [{key:value for key,value in item.items() if key not in {"_id","business_id","evaluation"}} for item in saved], "evaluation": saved[0].get("evaluation"), "warning": "Predictions are estimates, not actual sales."}
 
-    days = sorted(quantities_by_day)
-    if len(days) < 2:
-        return {
-            "status": "insufficient_data",
-            "method": "7-day moving average baseline",
-            "observed_sales_days": len(days),
-            "required_sales_days": 2,
-            "message": "Complete sales on at least two different days to generate a demand estimate.",
-        }
 
-    latest_day = days[-1]
-    start_day = latest_day - timedelta(days=6)
-    window_days = [start_day + timedelta(days=offset) for offset in range(7)]
-    recent_items = sorted({name for day in window_days for name in quantities_by_day.get(day, {})})
-    per_item = []
-    for name in recent_items:
-        daily_values = [quantities_by_day.get(day, {}).get(name, 0) for day in window_days]
-        per_item.append({"item": name, "estimated_quantity": round(sum(daily_values) / len(daily_values), 1)})
+@router.post("/demand-forecast/generate")
+def generate_demand_forecast(business_id: str, user=Depends(require_roles("admin", "manager"))):
+    check_business(business_id)
+    return generate_forecast(business_id)
 
-    total_per_day = [sum(quantities_by_day.get(day, {}).values()) for day in window_days]
-    return {
-        "status": "ready",
-        "method": "7-day moving average baseline",
-        "forecast_for": (latest_day + timedelta(days=1)).isoformat(),
-        "window_start": start_day.isoformat(),
-        "window_end": latest_day.isoformat(),
-        "observed_sales_days": len(days),
-        "estimated_total_quantity": forecast_daily_demand(total_per_day),
-        "items": per_item,
-        "warning": "A simple baseline estimate from completed orders, not a guarantee.",
-    }
+
+@router.get("/demand-forecast/history")
+def demand_forecast_history(business_id: str, user=Depends(require_roles("admin", "manager"))):
+    check_business(business_id)
+    return forecast_history(business_id)

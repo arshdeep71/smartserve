@@ -1,0 +1,710 @@
+{
+  "label": "SYNTHETIC DEMO EVALUATION \u2014 NOT REAL CANTEEN PERFORMANCE",
+  "seed": 20261030,
+  "feedback": {
+    "train_rows": 120,
+    "eval_rows": 30,
+    "train_classes": {
+      "positive": 40,
+      "spice": 40,
+      "quality": 40
+    },
+    "eval_classes": {
+      "positive": 10,
+      "spice": 10,
+      "quality": 10
+    },
+    "train_duplicates": 0,
+    "eval_duplicates": 0,
+    "train_eval_overlap": 0,
+    "results": [
+      {
+        "model": "Logistic Regression",
+        "features": "word unigram+bigrams",
+        "accuracy": 0.9666666666666667,
+        "precision_macro": 0.9696969696969697,
+        "recall_macro": 0.9666666666666667,
+        "f1_macro": 0.9665831244778613,
+        "f1_weighted": 0.9665831244778613,
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            1,
+            0,
+            9
+          ]
+        ]
+      },
+      {
+        "model": "Linear SVM",
+        "features": "word unigram+bigrams",
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "f1_weighted": 1.0,
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            10
+          ]
+        ]
+      },
+      {
+        "model": "Multinomial Naive Bayes",
+        "features": "word unigram+bigrams",
+        "accuracy": 0.9666666666666667,
+        "precision_macro": 0.9696969696969697,
+        "recall_macro": 0.9666666666666667,
+        "f1_macro": 0.9665831244778613,
+        "f1_weighted": 0.9665831244778613,
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            1,
+            0,
+            9
+          ]
+        ]
+      },
+      {
+        "model": "Logistic Regression",
+        "features": "character 2-5 grams",
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "f1_weighted": 1.0,
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            10
+          ]
+        ]
+      },
+      {
+        "model": "Linear SVM",
+        "features": "character 2-5 grams",
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "f1_weighted": 1.0,
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            10
+          ]
+        ]
+      },
+      {
+        "model": "Multinomial Naive Bayes",
+        "features": "character 2-5 grams",
+        "accuracy": 0.9,
+        "precision_macro": 0.9023569023569024,
+        "recall_macro": 0.9,
+        "f1_macro": 0.899749373433584,
+        "f1_weighted": 0.899749373433584,
+        "confusion_matrix": [
+          [
+            8,
+            0,
+            2
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            1,
+            0,
+            9
+          ]
+        ]
+      }
+    ],
+    "best_by_macro_f1": {
+      "model": "Linear SVM",
+      "features": "word unigram+bigrams",
+      "macro_f1": 1.0
+    }
+  },
+  "demand": {
+    "train_rows": 216,
+    "eval_rows": 54,
+    "train_item_days": 174,
+    "eval_item_days": 54,
+    "train_date_start": "2026-08-02",
+    "train_date_end": "2026-10-12",
+    "eval_date_start": "2026-10-13",
+    "eval_date_end": "2026-10-30",
+    "date_overlap": 0,
+    "train_duplicates": 0,
+    "eval_duplicates": 0,
+    "items": [
+      "DEMO Chana Chawal",
+      "DEMO Dal Roti",
+      "DEMO Rajma Chawal"
+    ],
+    "metrics": {
+      "Moving Average": {
+        "mae": 3.1825396825396832,
+        "rmse": 3.89075109285026,
+        "r2": 0.6615714972594422,
+        "wape": 0.09489626883332021
+      },
+      "Linear Regression": {
+        "mae": 3.396302677186067,
+        "rmse": 4.0739967476188506,
+        "r2": 0.628942347865496,
+        "wape": 0.10127020682940233
+      },
+      "Random Forest": {
+        "mae": 3.4530420507989965,
+        "rmse": 4.088465090835618,
+        "r2": 0.6263021285577266,
+        "wape": 0.10296204900228924
+      }
+    },
+    "actual_vs_predicted": [
+      {
+        "date": "2026-10-13",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 31.0,
+        "Moving Average": 27.857142857142858,
+        "Linear Regression": 25.05509788467748,
+        "Random Forest": 26.48002777777778
+      },
+      {
+        "date": "2026-10-14",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 31.0,
+        "Moving Average": 28.714285714285715,
+        "Linear Regression": 25.984488470939354,
+        "Random Forest": 26.691904761904784
+      },
+      {
+        "date": "2026-10-15",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 27.0,
+        "Moving Average": 29.285714285714285,
+        "Linear Regression": 26.025833523079072,
+        "Random Forest": 26.82318452380954
+      },
+      {
+        "date": "2026-10-16",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 28.0,
+        "Moving Average": 29.142857142857142,
+        "Linear Regression": 25.50993720457816,
+        "Random Forest": 26.78255555555558
+      },
+      {
+        "date": "2026-10-17",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 33.0,
+        "Moving Average": 28.714285714285715,
+        "Linear Regression": 28.12114782028656,
+        "Random Forest": 27.279910714285723
+      },
+      {
+        "date": "2026-10-18",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 27.0,
+        "Moving Average": 29.428571428571427,
+        "Linear Regression": 29.552659254231212,
+        "Random Forest": 29.951690476190464
+      },
+      {
+        "date": "2026-10-19",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 26.0,
+        "Moving Average": 29.142857142857142,
+        "Linear Regression": 25.950803919358243,
+        "Random Forest": 27.491305555555563
+      },
+      {
+        "date": "2026-10-20",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 25.0,
+        "Moving Average": 29.0,
+        "Linear Regression": 26.083885464732848,
+        "Random Forest": 27.206547619047633
+      },
+      {
+        "date": "2026-10-21",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 21.0,
+        "Moving Average": 28.142857142857142,
+        "Linear Regression": 27.25142568753366,
+        "Random Forest": 27.59086309523809
+      },
+      {
+        "date": "2026-10-22",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 25.0,
+        "Moving Average": 26.714285714285715,
+        "Linear Regression": 26.730665298317753,
+        "Random Forest": 26.512952380952374
+      },
+      {
+        "date": "2026-10-23",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 24.0,
+        "Moving Average": 26.428571428571427,
+        "Linear Regression": 27.754623751001148,
+        "Random Forest": 27.36346374458875
+      },
+      {
+        "date": "2026-10-24",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 29.0,
+        "Moving Average": 25.857142857142858,
+        "Linear Regression": 30.720084361790175,
+        "Random Forest": 26.85209126984127
+      },
+      {
+        "date": "2026-10-25",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 28.0,
+        "Moving Average": 25.285714285714285,
+        "Linear Regression": 30.26227128147645,
+        "Random Forest": 26.795416666666675
+      },
+      {
+        "date": "2026-10-26",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 25.0,
+        "Moving Average": 25.428571428571427,
+        "Linear Regression": 27.209405638472106,
+        "Random Forest": 26.388107142857162
+      },
+      {
+        "date": "2026-10-27",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 22.0,
+        "Moving Average": 25.285714285714285,
+        "Linear Regression": 26.08508980416655,
+        "Random Forest": 25.489107142857154
+      },
+      {
+        "date": "2026-10-28",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 30.0,
+        "Moving Average": 24.857142857142858,
+        "Linear Regression": 25.271277786125918,
+        "Random Forest": 26.382134920634925
+      },
+      {
+        "date": "2026-10-29",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 25.0,
+        "Moving Average": 26.142857142857142,
+        "Linear Regression": 26.799355591837017,
+        "Random Forest": 28.061898268398263
+      },
+      {
+        "date": "2026-10-30",
+        "item_id": "demo-chana",
+        "item": "DEMO Chana Chawal",
+        "actual": 25.0,
+        "Moving Average": 26.142857142857142,
+        "Linear Regression": 25.673024680557592,
+        "Random Forest": 25.99969246031747
+      },
+      {
+        "date": "2026-10-13",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 36.0,
+        "Moving Average": 30.285714285714285,
+        "Linear Regression": 28.66822567248591,
+        "Random Forest": 28.817775793650796
+      },
+      {
+        "date": "2026-10-14",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 26.0,
+        "Moving Average": 31.714285714285715,
+        "Linear Regression": 29.886082436933343,
+        "Random Forest": 28.69329960317461
+      },
+      {
+        "date": "2026-10-15",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 38.0,
+        "Moving Average": 30.857142857142858,
+        "Linear Regression": 29.041808648724928,
+        "Random Forest": 29.228448412698416
+      },
+      {
+        "date": "2026-10-16",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 30.0,
+        "Moving Average": 31.571428571428573,
+        "Linear Regression": 30.408428258885422,
+        "Random Forest": 31.17140476190478
+      },
+      {
+        "date": "2026-10-17",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 33.0,
+        "Moving Average": 31.571428571428573,
+        "Linear Regression": 31.730751185741273,
+        "Random Forest": 32.77574999999998
+      },
+      {
+        "date": "2026-10-18",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 38.0,
+        "Moving Average": 32.285714285714285,
+        "Linear Regression": 31.55436171638017,
+        "Random Forest": 33.472232142857145
+      },
+      {
+        "date": "2026-10-19",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 35.0,
+        "Moving Average": 32.857142857142854,
+        "Linear Regression": 29.870098144152035,
+        "Random Forest": 29.28922619047619
+      },
+      {
+        "date": "2026-10-20",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 30.0,
+        "Moving Average": 33.714285714285715,
+        "Linear Regression": 29.747072612185455,
+        "Random Forest": 28.26973214285715
+      },
+      {
+        "date": "2026-10-21",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 31.0,
+        "Moving Average": 32.857142857142854,
+        "Linear Regression": 27.988070952771544,
+        "Random Forest": 28.438619047619046
+      },
+      {
+        "date": "2026-10-22",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 32.0,
+        "Moving Average": 33.57142857142857,
+        "Linear Regression": 30.28548940204928,
+        "Random Forest": 28.590875
+      },
+      {
+        "date": "2026-10-23",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 36.0,
+        "Moving Average": 32.714285714285715,
+        "Linear Regression": 30.178914351075463,
+        "Random Forest": 31.0024345238095
+      },
+      {
+        "date": "2026-10-24",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 37.0,
+        "Moving Average": 33.57142857142857,
+        "Linear Regression": 33.16578389483818,
+        "Random Forest": 32.95520833333333
+      },
+      {
+        "date": "2026-10-25",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 32.0,
+        "Moving Average": 34.142857142857146,
+        "Linear Regression": 33.74625250727883,
+        "Random Forest": 34.027922619047615
+      },
+      {
+        "date": "2026-10-26",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 28.0,
+        "Moving Average": 33.285714285714285,
+        "Linear Regression": 30.01318871659979,
+        "Random Forest": 27.95865277777779
+      },
+      {
+        "date": "2026-10-27",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 33.0,
+        "Moving Average": 32.285714285714285,
+        "Linear Regression": 29.56288428195211,
+        "Random Forest": 29.254714285714282
+      },
+      {
+        "date": "2026-10-28",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 35.0,
+        "Moving Average": 32.714285714285715,
+        "Linear Regression": 30.955634760441413,
+        "Random Forest": 30.28243452380951
+      },
+      {
+        "date": "2026-10-29",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 33.0,
+        "Moving Average": 33.285714285714285,
+        "Linear Regression": 31.690655216707633,
+        "Random Forest": 30.696331349206346
+      },
+      {
+        "date": "2026-10-30",
+        "item_id": "demo-dal",
+        "item": "DEMO Dal Roti",
+        "actual": 35.0,
+        "Moving Average": 33.42857142857143,
+        "Linear Regression": 30.796907507006416,
+        "Random Forest": 30.146648809523803
+      },
+      {
+        "date": "2026-10-13",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 33.0,
+        "Moving Average": 41.285714285714285,
+        "Linear Regression": 38.010197657540296,
+        "Random Forest": 38.4939623015873
+      },
+      {
+        "date": "2026-10-14",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 41.0,
+        "Moving Average": 40.285714285714285,
+        "Linear Regression": 38.29776053281605,
+        "Random Forest": 38.29459523809524
+      },
+      {
+        "date": "2026-10-15",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 38.0,
+        "Moving Average": 40.42857142857143,
+        "Linear Regression": 39.8632970058285,
+        "Random Forest": 38.85349007936508
+      },
+      {
+        "date": "2026-10-16",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 32.0,
+        "Moving Average": 40.285714285714285,
+        "Linear Regression": 40.041848576183256,
+        "Random Forest": 39.26967857142858
+      },
+      {
+        "date": "2026-10-17",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 41.0,
+        "Moving Average": 39.142857142857146,
+        "Linear Regression": 42.12307081697885,
+        "Random Forest": 40.65080357142856
+      },
+      {
+        "date": "2026-10-18",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 40.0,
+        "Moving Average": 38.0,
+        "Linear Regression": 43.35364100831451,
+        "Random Forest": 44.46991666666665
+      },
+      {
+        "date": "2026-10-19",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 45.0,
+        "Moving Average": 38.0,
+        "Linear Regression": 40.72543709169592,
+        "Random Forest": 39.54787698412698
+      },
+      {
+        "date": "2026-10-20",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 36.0,
+        "Moving Average": 38.57142857142857,
+        "Linear Regression": 39.05984643702888,
+        "Random Forest": 38.396875
+      },
+      {
+        "date": "2026-10-21",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 38.0,
+        "Moving Average": 39.0,
+        "Linear Regression": 38.454093877560865,
+        "Random Forest": 38.66589285714285
+      },
+      {
+        "date": "2026-10-22",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 42.0,
+        "Moving Average": 38.57142857142857,
+        "Linear Regression": 38.455605853605576,
+        "Random Forest": 36.50813293650791
+      },
+      {
+        "date": "2026-10-23",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 49.0,
+        "Moving Average": 39.142857142857146,
+        "Linear Regression": 39.058755747055855,
+        "Random Forest": 39.10214285714286
+      },
+      {
+        "date": "2026-10-24",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 47.0,
+        "Moving Average": 41.57142857142857,
+        "Linear Regression": 42.313928283950005,
+        "Random Forest": 42.66228571428571
+      },
+      {
+        "date": "2026-10-25",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 44.0,
+        "Moving Average": 42.42857142857143,
+        "Linear Regression": 40.28273752548344,
+        "Random Forest": 40.44137896825396
+      },
+      {
+        "date": "2026-10-26",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 42.0,
+        "Moving Average": 43.0,
+        "Linear Regression": 37.49985712973056,
+        "Random Forest": 38.62629166666666
+      },
+      {
+        "date": "2026-10-27",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 42.0,
+        "Moving Average": 42.57142857142857,
+        "Linear Regression": 36.8240318187289,
+        "Random Forest": 37.86920039682539
+      },
+      {
+        "date": "2026-10-28",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 38.0,
+        "Moving Average": 43.42857142857143,
+        "Linear Regression": 37.8733086740575,
+        "Random Forest": 36.91516071428571
+      },
+      {
+        "date": "2026-10-29",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 42.0,
+        "Moving Average": 43.42857142857143,
+        "Linear Regression": 38.09375410868597,
+        "Random Forest": 35.87611706349206
+      },
+      {
+        "date": "2026-10-30",
+        "item_id": "demo-ra",
+        "item": "DEMO Rajma Chawal",
+        "actual": 41.0,
+        "Moving Average": 43.42857142857143,
+        "Linear Regression": 40.101671823835105,
+        "Random Forest": 36.873503968253964
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+comment,label,source,is_synthetic,split
+Today's lunch was delicious for me during the break.,positive,synthetic_demo,true,eval
+Today's lunch burned my mouth for me with the usual portion.,spice,synthetic_demo,true,eval
+The dish did not taste fresh for me as served.,quality,synthetic_demo,true,eval
+The meal tasted fresh at lunch during the break.,positive,synthetic_demo,true,eval
+Today's lunch was too mild overall during the break.,spice,synthetic_demo,true,eval
+This plate was overcooked today on campus.,quality,synthetic_demo,true,eval
+My food was filling this time as served.,positive,synthetic_demo,true,eval
+The dish burned my mouth for me with the usual portion.,spice,synthetic_demo,true,eval
+Today's lunch was dry for me with the usual portion.,quality,synthetic_demo,true,eval
+The dish was enjoyable at lunch during the break.,positive,synthetic_demo,true,eval
+Today's lunch needs less pepper at lunch during the break.,spice,synthetic_demo,true,eval
+This plate did not taste fresh at lunch with the usual portion.,quality,synthetic_demo,true,eval
+The meal was enjoyable today on campus.,positive,synthetic_demo,true,eval
+Today's lunch burned my mouth overall as served.,spice,synthetic_demo,true,eval
+Today's lunch smelled unpleasant at lunch from the lunch counter.,quality,synthetic_demo,true,eval
+This plate was delicious this time with the usual portion.,positive,synthetic_demo,true,eval
+Today's lunch was too spicy this time as served.,spice,synthetic_demo,true,eval
+Today's lunch was overcooked overall with lunch.,quality,synthetic_demo,true,eval
+This plate was delicious overall during the break.,positive,synthetic_demo,true,eval
+Today's lunch burned my mouth at lunch from the lunch counter.,spice,synthetic_demo,true,eval
+My food was dry overall on campus.,quality,synthetic_demo,true,eval
+This plate had a nice flavour at lunch with the usual portion.,positive,synthetic_demo,true,eval
+This plate was too spicy overall with the usual portion.,spice,synthetic_demo,true,eval
+Today's lunch smelled unpleasant overall during the break.,quality,synthetic_demo,true,eval
+The meal was filling at lunch as served.,positive,synthetic_demo,true,eval
+Today's lunch burned my mouth overall with lunch.,spice,synthetic_demo,true,eval
+This plate was overcooked this time during the break.,quality,synthetic_demo,true,eval
+This plate tasted fresh at lunch with the usual portion.,positive,synthetic_demo,true,eval
+This plate needs less pepper for me on campus.,spice,synthetic_demo,true,eval
+This plate had poor texture today on campus.,quality,synthetic_demo,true,eval

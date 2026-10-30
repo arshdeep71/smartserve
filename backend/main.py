@@ -1,8 +1,19 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.routes import analytics, auth, businesses, feedback, inventory, menu, orders, platform, qr, stock, tables
+from backend.services.forecast_scheduler import start_scheduler, stop_scheduler
 
 app = FastAPI(title="SmartServe API", version="0.1.0")
+
+
+@app.on_event("startup")
+def start_background_forecast_scheduler():
+    start_scheduler()
+
+
+@app.on_event("shutdown")
+def stop_background_forecast_scheduler():
+    stop_scheduler()
 
 app.add_middleware(
     CORSMiddleware,

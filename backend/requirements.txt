@@ -7,3 +7,7 @@ passlib[bcrypt]
 bcrypt<4.1
 python-jose[cryptography]
 qrcode[pil]
+scikit-learn
+pandas
+numpy
+joblib
